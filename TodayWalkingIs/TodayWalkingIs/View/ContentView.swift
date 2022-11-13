@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct ContentView: View {
-    @StateObject private var locationDelegation = CoreLocationController()
+    @StateObject var locationController = LocationController()
     @AppStorage("tapCount") private var useCount = 0
     var useCountEnough:Bool = false
     mutating func userCountEnoughBool() {
@@ -27,7 +27,7 @@ struct ContentView: View {
     }
     var body: some View {
         if useCountEnough {
-            Main()
+            Main(locationController: locationController)
         } else {
             IndicatorToMain()
         }

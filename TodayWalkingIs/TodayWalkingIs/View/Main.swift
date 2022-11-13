@@ -9,20 +9,18 @@ import Foundation
 import SwiftUI
 import MapKit
 
+
 struct Main: View {
-    @StateObject var coreLocationController: CoreLocationController = CoreLocationController()
+    @ObservedObject var locationController:LocationController
     @State var showSecondView = false
-    
-//    @State var matchWLocation:WLocation
-    
-    @EnvironmentObject var wLocationController:WLocationController
+    @EnvironmentObject private var coreLocationController:CoreLocationController
     
     
     var body: some View {
         NavigationView{
             VStack(alignment:.center){
                 HStack{
-                    NavigationLink(destination: DairyContentView()) {
+                    NavigationLink(destination: DairyContentView(locationController: locationController)) {
                         Image(systemName:"list.bullet.rectangle.portrait")
                             .resizable()
                             .frame(width: 22, height: 22)
@@ -35,7 +33,7 @@ struct Main: View {
                     Text("내가 있는곳에 일기를 적어보자..")
                         .font(.title)
                         .foregroundColor(Color("Thirdary"))
-                    Map(coordinateRegion: $coreLocationController.region, showsUserLocation: true, annotationItems: wLocationController.wLocations) {
+                    Map(coordinateRegion: $coreLocationController.region, showsUserLocation: true, annotationItems: locationController.wLocations) {
                         wLocation in MapAnnotation(coordinate: wLocation.coordinate) {
                             NavigationLink(destination: DairyDetail(wLocation: wLocation)){
                                 Circle()
@@ -51,7 +49,7 @@ struct Main: View {
                     }.frame(width: 350, height: 600)
                 HStack{
                     Spacer()
-                    NavigationLink(destination:PlaceWrite()) {
+                    NavigationLink(destination:PlaceWrite(locationController: locationController)) {
                     ZStack {Circle()
                             .frame(width: 64.0,height: 64.0)
                                 .foregroundColor(Color("Secondary"))
@@ -60,10 +58,6 @@ struct Main: View {
                     }
                 }.padding()
                                    }
-//                    NavigationLink(destination: PlaceWrite()) {
-//                            Image(systemName: "square.and.pencil")
-//                                .foregroundColor(Color.white)
-//                                .font(.system(size: 24.0, weight: .regular))
                 Spacer()
             }.frame(
                 minWidth:0,
@@ -75,3 +69,4 @@ struct Main: View {
     }
         }
 }
+

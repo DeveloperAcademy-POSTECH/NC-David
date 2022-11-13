@@ -1,5 +1,5 @@
 import Foundation
-let testData = WLocationController()
+let testData = LocationController()
 
 import SwiftUI
 import Foundation
@@ -35,20 +35,16 @@ struct DairyDetail: View {
         }.navigationBarHidden(true)
     }
 }
-struct DairyContentView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-        DairyContentView()
-    }
-}
+
 
 struct DairyContentView: View {
-    @EnvironmentObject var locationAndWritingController:WLocationController
+    
+    @ObservedObject var locationController:LocationController
     
     var body: some View {
         NavigationView {
                 VStack{
-                    List(locationAndWritingController.wLocations) { wLocation in
+                    List(locationController.wLocations) { wLocation in
                         NavigationLink(destination: DairyDetail(wLocation: wLocation)){
                             Image(systemName: "text.book.closed")
                                 .foregroundColor(Color("Secondary"))

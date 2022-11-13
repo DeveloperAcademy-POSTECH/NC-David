@@ -7,7 +7,7 @@
 
 import Foundation
 import MapKit
-struct WLocation:Identifiable {
+struct WLocation:Identifiable, Codable{
     let id: UUID
     let date:String
     let name:String

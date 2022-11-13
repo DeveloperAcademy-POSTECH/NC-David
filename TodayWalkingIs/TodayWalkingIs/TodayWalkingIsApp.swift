@@ -3,10 +3,10 @@ import SwiftUI
 
 @main
 struct TodayWalkingIsApp: App {
-    var locationAndWritingController = WLocationController()
+    var coreLocationController = CoreLocationController()
     var body: some Scene {
         WindowGroup {
-            ContentView().environmentObject(locationAndWritingController)
+            ContentView().environmentObject(coreLocationController)
         }
     }
 }

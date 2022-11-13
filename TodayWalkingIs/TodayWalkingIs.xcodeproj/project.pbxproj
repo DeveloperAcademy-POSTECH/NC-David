@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		630A8A3E281BBEE100A508F6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A8A3D281BBEE100A508F6 /* Location.swift */; };
-		630A8A40281BBFC000A508F6 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A8A3F281BBFC000A508F6 /* Controller.swift */; };
+		631CC80D2849CB230055D4EB /* PersisData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CC80C2849CB230055D4EB /* PersisData.swift */; };
+		631CC80F2849E0DF0055D4EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CC80E2849E0DF0055D4EB /* Constants.swift */; };
 		633E810B2824253C00F7952D /* SeeWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E810A2824253C00F7952D /* SeeWrite.swift */; };
+		63692DD428700E4C009F1060 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63692DD328700E4C009F1060 /* CoreLocationController.swift */; };
+		63692DD628700E91009F1060 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63692DD528700E91009F1060 /* LocationController.swift */; };
 		63B2CD8828192E6800476EFF /* TodayWalkingIsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */; };
 		63B2CD8A28192E6800476EFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD8928192E6800476EFF /* ContentView.swift */; };
 		63B2CD8C28192E6A00476EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B2CD8B28192E6A00476EFF /* Assets.xcassets */; };
@@ -23,8 +26,11 @@
 
 /* Begin PBXFileReference section */
 		630A8A3D281BBEE100A508F6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		630A8A3F281BBFC000A508F6 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		631CC80C2849CB230055D4EB /* PersisData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersisData.swift; sourceTree = "<group>"; };
+		631CC80E2849E0DF0055D4EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		633E810A2824253C00F7952D /* SeeWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeWrite.swift; sourceTree = "<group>"; };
+		63692DD328700E4C009F1060 /* CoreLocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
+		63692DD528700E91009F1060 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		63B2CD8428192E6800476EFF /* TodayWalkingIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayWalkingIs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWalkingIsApp.swift; sourceTree = "<group>"; };
 		63B2CD8928192E6800476EFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,7 +57,8 @@
 		637E5505281B9AF9009E6324 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				630A8A3F281BBFC000A508F6 /* Controller.swift */,
+				63692DD328700E4C009F1060 /* CoreLocationController.swift */,
+				63692DD528700E91009F1060 /* LocationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -93,6 +100,7 @@
 				63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */,
 				63B2CD8B28192E6A00476EFF /* Assets.xcassets */,
 				63B2CD8D28192E6A00476EFF /* Preview Content */,
+				631CC80E2849E0DF0055D4EB /* Constants.swift */,
 			);
 			path = TodayWalkingIs;
 			sourceTree = "<group>";
@@ -111,6 +119,7 @@
 				630A8A3D281BBEE100A508F6 /* Location.swift */,
 				63F55B5E2820059C004D7D65 /* Writing.swift */,
 				63DE5EA3282621D600D98FD6 /* WLocation.swift */,
+				631CC80C2849CB230055D4EB /* PersisData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -186,15 +195,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B2CD9A281930EB00476EFF /* WalkThrough.swift in Sources */,
-				630A8A40281BBFC000A508F6 /* Controller.swift in Sources */,
 				63DE5EA4282621D600D98FD6 /* WLocation.swift in Sources */,
 				63F55B63282010D2004D7D65 /* PlaceWrite.swift in Sources */,
 				63B2CD982819306600476EFF /* Main.swift in Sources */,
+				63692DD428700E4C009F1060 /* CoreLocationController.swift in Sources */,
+				63692DD628700E91009F1060 /* LocationController.swift in Sources */,
 				63F55B5F2820059C004D7D65 /* Writing.swift in Sources */,
 				630A8A3E281BBEE100A508F6 /* Location.swift in Sources */,
 				63B2CD8A28192E6800476EFF /* ContentView.swift in Sources */,
 				633E810B2824253C00F7952D /* SeeWrite.swift in Sources */,
+				631CC80D2849CB230055D4EB /* PersisData.swift in Sources */,
 				63B2CD8828192E6800476EFF /* TodayWalkingIsApp.swift in Sources */,
+				631CC80F2849E0DF0055D4EB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,11 @@ import SwiftUI
 import UIKit
 
 struct IndicatorToMain: View {
+    @StateObject var locationController = LocationController()
     @State private var showMain:Bool = false
     var body: some View {
         if showMain {
-            Main()
+            Main(locationController: locationController)
         }
         else {
             IndicatorView(showMain: $showMain)

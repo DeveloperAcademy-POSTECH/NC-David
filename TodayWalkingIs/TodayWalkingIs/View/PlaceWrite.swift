@@ -10,10 +10,8 @@ import SwiftUI
 
 struct PlaceWrite: View {
     @Environment(\.presentationMode) var presentationMode
-    
-    @StateObject var coreLocationData = CoreLocationController()
-    
-    @EnvironmentObject var locationAndWritingController:WLocationController
+    @ObservedObject var locationController:LocationController
+    @EnvironmentObject private var coreLocationController:CoreLocationController
     
     var nowTime:String {
         let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)
@@ -46,11 +44,11 @@ struct PlaceWrite: View {
                                 .lineSpacing(5)
             }.background(Color("Secondary"))
 //            Text("\(locationObject.latitude)\(locationObject.longitude)")  작성누르면 latitude와 longitude 값은 넘어온다
-            NavigationLink(destination: Main()){
+            NavigationLink(destination: Main(locationController: locationController)){
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
-                    let wLocation = WLocation(id: UUID(), date: nowTime, name: name, description: description, latitude: coreLocationData.region.center.latitude, longitude: coreLocationData.region.center.longitude)
-                    locationAndWritingController.writeDiary(addWLocation: wLocation)
+                    let wLocation = WLocation(id: UUID(), date: nowTime, name: name, description: description, latitude: coreLocationController.region.center.latitude, longitude: coreLocationController.region.center.longitude)
+                    locationController.writeDiary(addWLocation: wLocation)
                 }, label: {
                     Text("작성완료").foregroundColor(Color("Thirdary"))
                 }).frame(width: 60, height: 60)
@@ -60,8 +58,4 @@ struct PlaceWrite: View {
             .background(Color("Primary"))
     }
 }
-struct PlaceMemory_Previews: PreviewProvider {
-    static var previews: some View {
-        PlaceWrite()
-    }
-}
+
