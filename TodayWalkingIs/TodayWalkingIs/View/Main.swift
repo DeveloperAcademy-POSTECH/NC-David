@@ -30,9 +30,10 @@ struct Main: View {
                     }
                 }.padding(.top, 30)
                     Spacer()
-                    Text("내가 있는곳에 일기를 적어보자..")
-                        .font(.title)
-                        .foregroundColor(Color("Thirdary"))
+                Text("영어 abcdfg 한글 가나다라..")
+                    .font(Font.custom("NotoSerifKR-Bold", size: 20))
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color("Thirdary"))
                     Map(coordinateRegion: $coreLocationController.region, showsUserLocation: true, annotationItems: locationController.wLocations) {
                         wLocation in MapAnnotation(coordinate: wLocation.coordinate) {
                             NavigationLink(destination: DairyDetail(wLocation: wLocation)){
