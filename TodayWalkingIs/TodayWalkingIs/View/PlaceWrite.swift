@@ -10,8 +10,8 @@ import SwiftUI
 
 struct PlaceWrite: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var locationController:LocationController
-    @EnvironmentObject private var coreLocationController:CoreLocationController
+    @ObservedObject var locationController:LocationData
+    @EnvironmentObject private var coreLocationController:CoreLocation
     
     var nowTime:String {
         let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)

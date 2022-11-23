@@ -11,11 +11,8 @@ import MapKit
 
 
 struct Main: View {
-    @ObservedObject var locationController:LocationController
-    @State var showSecondView = false
-    @EnvironmentObject private var coreLocationController:CoreLocationController
-    
-    
+    @ObservedObject var locationController:LocationData
+    @EnvironmentObject var coreLocationController:CoreLocation
     var body: some View {
         NavigationView{
             VStack(alignment:.center){

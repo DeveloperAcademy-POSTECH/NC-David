@@ -1,5 +1,5 @@
 import Foundation
-let testData = LocationController()
+let testData = LocationData()
 
 import SwiftUI
 import Foundation
@@ -39,7 +39,7 @@ struct DairyDetail: View {
 
 struct DairyContentView: View {
     
-    @ObservedObject var locationController:LocationController
+    @ObservedObject var locationController:LocationData
     
     var body: some View {
         NavigationView {
