@@ -9,7 +9,23 @@ import SwiftUI
 
 struct WalkThroughDetailView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView{
+            VStack {
+                Spacer()
+                Text("Hello I am Detail")
+                Spacer()
+                HStack{
+                    Spacer()
+                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true)) {
+                        Image(systemName: "rectangle.portrait.and.arrow.right.fill")
+                            .resizable()
+                            .frame(width: 48,height: 48)
+                            .padding()
+                    }
+                }
+            }
+        }
+
     }
 }
 

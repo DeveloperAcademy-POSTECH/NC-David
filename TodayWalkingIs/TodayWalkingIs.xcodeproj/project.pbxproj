@@ -24,7 +24,7 @@
 		63B2CD9A281930EB00476EFF /* WalkThroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD99281930EB00476EFF /* WalkThroughView.swift */; };
 		63DE5EA4282621D600D98FD6 /* WLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DE5EA3282621D600D98FD6 /* WLocation.swift */; };
 		63F55B5F2820059C004D7D65 /* Writing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F55B5E2820059C004D7D65 /* Writing.swift */; };
-		63F55B63282010D2004D7D65 /* PlaceWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F55B62282010D2004D7D65 /* PlaceWrite.swift */; };
+		63F55B63282010D2004D7D65 /* WriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F55B62282010D2004D7D65 /* WriteView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,7 +47,7 @@
 		63B2CD99281930EB00476EFF /* WalkThroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkThroughView.swift; sourceTree = "<group>"; };
 		63DE5EA3282621D600D98FD6 /* WLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WLocation.swift; sourceTree = "<group>"; };
 		63F55B5E2820059C004D7D65 /* Writing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Writing.swift; sourceTree = "<group>"; };
-		63F55B62282010D2004D7D65 /* PlaceWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceWrite.swift; sourceTree = "<group>"; };
+		63F55B62282010D2004D7D65 /* WriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +76,7 @@
 				63B2CD99281930EB00476EFF /* WalkThroughView.swift */,
 				6325B7C3292E7CA200D4B186 /* WalkThroughDetailView.swift */,
 				63B2CD972819306600476EFF /* Main.swift */,
-				63F55B62282010D2004D7D65 /* PlaceWrite.swift */,
+				63F55B62282010D2004D7D65 /* WriteView.swift */,
 				633E810A2824253C00F7952D /* SeeWrite.swift */,
 			);
 			path = View;
@@ -208,7 +208,7 @@
 				63B2CD9A281930EB00476EFF /* WalkThroughView.swift in Sources */,
 				6325B7C0292E60EA00D4B186 /* HomeView.swift in Sources */,
 				63DE5EA4282621D600D98FD6 /* WLocation.swift in Sources */,
-				63F55B63282010D2004D7D65 /* PlaceWrite.swift in Sources */,
+				63F55B63282010D2004D7D65 /* WriteView.swift in Sources */,
 				6325B7C4292E7CA200D4B186 /* WalkThroughDetailView.swift in Sources */,
 				63B2CD982819306600476EFF /* Main.swift in Sources */,
 				63692DD428700E4C009F1060 /* CoreLocation.swift in Sources */,
@@ -353,8 +353,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodayWalkingIs/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "당신의 현재위치를 확인하려고합니다 괜찮은가요?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "당신의 현재위치를 확인하려고합니다 괜찮은가요?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "플레이어리앱이 당신의 위치를 확인하려고합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "플레이어리앱이 당신의 위치를 확인하려고합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -385,8 +385,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TodayWalkingIs/Info.plist;
-				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "당신의 현재위치를 확인하려고합니다 괜찮은가요?";
-				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "당신의 현재위치를 확인하려고합니다 괜찮은가요?";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "플레이어리앱이 당신의 위치를 확인하려고합니다";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "플레이어리앱이 당신의 위치를 확인하려고합니다";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

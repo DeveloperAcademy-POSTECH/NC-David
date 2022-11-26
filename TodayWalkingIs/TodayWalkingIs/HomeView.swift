@@ -15,17 +15,28 @@ struct HomeView: View {
         NavigationView {
             VStack{
                 Map(coordinateRegion: $coreLocation.region, showsUserLocation: true)
-                Text("Hello World")
-                
+                Text("Title")
+                Text("SubTitle")
+            }
+            .onAppear {
+                coreLocation.checkLocation()
             }
             .toolbar {
-                ToolbarItem(placement:.navigationBarLeading) {
-                    NavigationLink(destination: Sample()) {
+                ToolbarItemGroup(placement:.navigationBarLeading) {
+                    NavigationLink(destination: Sample().navigationBarBackButtonHidden(true)) {
                         Image(systemName: "list.bullet.clipboard")
                             .resizable()
-                            .frame(width:48, height: 48)
+                            .frame(width:36, height: 36)
                         Spacer()
                     }
+                }
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Spacer()
+                    NavigationLink(destination: WriteView().navigationBarBackButtonHidden(true)) {
+                            Image(systemName: "list.bullet.clipboard")
+                                .resizable()
+                                .frame(width:48, height: 48)
+                        }
                 }
             }
         }
