@@ -11,7 +11,8 @@ import CoreLocation
 
 enum MapDetails {
     static let defaultLocation = CLLocationCoordinate2D(latitude: 37.5511, longitude: 126.9882)
-    static let mapMagnitude = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+    static let mapMagnitude = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+    
 }
 
 class CoreLocation: NSObject, ObservableObject, CLLocationManagerDelegate {
@@ -19,7 +20,7 @@ class CoreLocation: NSObject, ObservableObject, CLLocationManagerDelegate {
     @Published var region = MKCoordinateRegion(center:MapDetails.defaultLocation , span: MapDetails.mapMagnitude)
 
     var locationManager: CLLocationManager?
-    //MARK: Location 탐지하는동안 MainThread 탐지되는동안 UI멈추는 이슈 존재함
+    // TODO: Location 탐지하는동안 MainThread 탐지되는동안 UI멈추는 이슈 존재함
     func checkLocation() {
         if CLLocationManager.locationServicesEnabled() {
             self.locationManager = CLLocationManager()
@@ -30,6 +31,8 @@ class CoreLocation: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
     
     
+    
+    // TODO: 프린트문말고 오류메시지 문구를 확인할수있는 Alert구현
     private func checkLocationAuthorization() {
         guard let locationManager = locationManager else {
             return

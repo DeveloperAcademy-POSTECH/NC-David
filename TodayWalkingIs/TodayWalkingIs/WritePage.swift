@@ -8,17 +8,9 @@
 import Foundation
 import SwiftUI
 
-struct WriteView: View {
+struct WritePage: View {
     @Environment(\.presentationMode) var presentationMode
     //    @EnvironmentObject var locationData: LocationData
-    
-    var writeTime:String {
-        let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return dateFormatter.string(from: nowDate)
-    }
-    
     
     @State private var name:String = ""
     @State private var description:String = ""
@@ -57,7 +49,7 @@ struct WriteView: View {
                                             } label: {
                                                 Image(systemName: "plus")
                                             }.sheet(isPresented: $isPresented,onDismiss: {
-                                                Text("Hello")
+                                                
                                             },content: {
                                                 ImagePicker(sourceType: self.sourceType, image: $image)
                                             })
@@ -88,18 +80,14 @@ struct WriteView: View {
             }
             .toolbar {
                 ToolbarItemGroup(placement:.navigationBarLeading){
-                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true)) {
-                        Image(systemName: "list.bullet.clipboard")
-                            .resizable()
-                            .frame(width:36, height: 36)
+                    NavigationLink(destination: HomePage().navigationBarBackButtonHidden(true)) {
+                        Text("홈으로")
                         Spacer()
                     }
                 }
                 ToolbarItemGroup(placement:.navigationBarTrailing){
-                    NavigationLink(destination: HomeView().navigationBarBackButtonHidden(true)) {
-                        Image(systemName: "list.bullet.clipboard")
-                            .resizable()
-                            .frame(width:36, height: 36)
+                    NavigationLink(destination: ListPage().navigationBarBackButtonHidden(true)) {
+                        Text("작성완료")
                         Spacer()
                     }
                 }
@@ -108,49 +96,9 @@ struct WriteView: View {
     }
 }
 
-struct WriteView_Previews: PreviewProvider {
+struct WritePage_Previews: PreviewProvider {
     static var previews: some View {
-        WriteView()
+        WritePage()
     }
 }
 
-struct ImagePicker: UIViewControllerRepresentable {
-    var sourceType: UIImagePickerController.SourceType = .photoLibrary
-
-    func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = sourceType
-        imagePicker.delegate = context.coordinator
-        return imagePicker
-    }
-
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
-
-    }
-    
-    // MARK: - Using Coordinator to Adopt the UIImagePickerControllerDelegate Protocol
-    @Binding var image: UIImage?
-    @Environment(\.presentationMode) private var presentationMode
-
-    func makeCoordinator() -> Coordinator {
-        Coordinator(self)
-    }
-
-    final class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-        var parent: ImagePicker
-
-        init(_ parent: ImagePicker) {
-            self.parent = parent
-        }
-
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
-            if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-                parent.image = image
-            }
-
-            parent.presentationMode.wrappedValue.dismiss()
-        }
-    }
-}

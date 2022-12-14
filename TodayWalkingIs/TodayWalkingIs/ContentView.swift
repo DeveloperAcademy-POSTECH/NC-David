@@ -7,18 +7,17 @@
 
 import SwiftUI
 struct ContentView: View {
-    @StateObject var locationData = LocationData()
-    @AppStorage("WalkThrough") private var WalkThrough = 0
+    @AppStorage("OnBoarding") private var OnBoardDing = 0
     
     init() {
-        WalkThrough += 1
+        OnBoardDing += 1
     }
     
     var body: some View {
-        if WalkThrough >= 2 {
-            HomeView().environmentObject(locationData)
+        if OnBoardDing >= 2 {
+            HomePage()
         } else {
-            WalkThroughView()
+            OnboardingView()
         }
     }
 }
