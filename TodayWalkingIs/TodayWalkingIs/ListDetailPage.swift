@@ -10,6 +10,7 @@ import SwiftUI
 
 struct ListDetailPage: View {
     
+    // MARK: 작업진행중..
     let write:Write
     @State var title:String = ""
     @State var description:String = ""
@@ -23,8 +24,6 @@ struct ListDetailPage: View {
     func changeImage() {
         
     }
-    
-    
     var body: some View {
         NavigationView{
             VStack {

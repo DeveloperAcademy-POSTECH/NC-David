@@ -14,7 +14,7 @@ struct ContentView: View {
     }
     
     var body: some View {
-        if OnBoardDing >= 2 {
+        if OnBoardDing >= 100 {
             HomePage()
         } else {
             OnboardingView()

@@ -3,6 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>SongMyung-Regular.ttf</string>
+		<string>BlackHanSans-Regular.ttf</string>
+	</array>
 </dict>
 </plist>

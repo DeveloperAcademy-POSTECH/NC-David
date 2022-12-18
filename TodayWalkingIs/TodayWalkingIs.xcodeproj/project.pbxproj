@@ -15,6 +15,8 @@
 		63312C562949A553002320FC /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63312C552949A553002320FC /* SettingPage.swift */; };
 		633E810B2824253C00F7952D /* ListPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 633E810A2824253C00F7952D /* ListPage.swift */; };
 		63692DD428700E4C009F1060 /* CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63692DD328700E4C009F1060 /* CoreLocation.swift */; };
+		639763FC294C5C1E00EACF50 /* SongMyung-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 639763FB294C54E300EACF50 /* SongMyung-Regular.ttf */; };
+		639763FD294C5C2100EACF50 /* BlackHanSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 639763FA294C54D700EACF50 /* BlackHanSans-Regular.ttf */; };
 		63B2CD8828192E6800476EFF /* TodayWalkingIsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */; };
 		63B2CD8A28192E6800476EFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD8928192E6800476EFF /* ContentView.swift */; };
 		63B2CD8C28192E6A00476EFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B2CD8B28192E6A00476EFF /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		63312C552949A553002320FC /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
 		633E810A2824253C00F7952D /* ListPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPage.swift; sourceTree = "<group>"; };
 		63692DD328700E4C009F1060 /* CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreLocation.swift; sourceTree = "<group>"; };
+		639763FA294C54D700EACF50 /* BlackHanSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BlackHanSans-Regular.ttf"; sourceTree = "<group>"; };
+		639763FB294C54E300EACF50 /* SongMyung-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SongMyung-Regular.ttf"; sourceTree = "<group>"; };
 		63A645202921EE130001A7DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		63B2CD8428192E6800476EFF /* TodayWalkingIs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodayWalkingIs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWalkingIsApp.swift; sourceTree = "<group>"; };
@@ -59,6 +63,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		639763F8294C54BB00EACF50 /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				639763F9294C54C800EACF50 /* Font */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		639763F9294C54C800EACF50 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				639763FB294C54E300EACF50 /* SongMyung-Regular.ttf */,
+				639763FA294C54D700EACF50 /* BlackHanSans-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		63B2CD7B28192E6800476EFF = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +99,7 @@
 		63B2CD8628192E6800476EFF /* TodayWalkingIs */ = {
 			isa = PBXGroup;
 			children = (
+				639763F8294C54BB00EACF50 /* Styles */,
 				63A645202921EE130001A7DB /* Info.plist */,
 				63EE789829437B38006A32D7 /* Onboarding */,
 				63F55B62282010D2004D7D65 /* WritePage.swift */,
@@ -174,8 +196,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				639763FD294C5C2100EACF50 /* BlackHanSans-Regular.ttf in Resources */,
 				63B2CD8F28192E6A00476EFF /* Preview Assets.xcassets in Resources */,
 				63B2CD8C28192E6A00476EFF /* Assets.xcassets in Resources */,
+				639763FC294C5C1E00EACF50 /* SongMyung-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
