@@ -9,9 +9,7 @@ import Foundation
 import SwiftUI
 
 struct OnBoardingWrite: View {
-    @Environment(\.presentationMode) var presentationMode
-    //    @EnvironmentObject var locationData: LocationData
-    
+
     var writeTime:String {
         let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)
         let dateFormatter = DateFormatter()
@@ -20,7 +18,7 @@ struct OnBoardingWrite: View {
     }
     
     
-    @State private var name:String = ""
+    @State private var title:String = ""
     @State private var description:String = ""
     @State private var isPresented = false
     @State private var sourceType = UIImagePickerController.SourceType.photoLibrary
@@ -29,14 +27,19 @@ struct OnBoardingWrite: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("첫 글쓰기를 플레이어리에서 작상하려고합니다 지금 드는 생각을 글로 작성해주세요 사진도 첨부하시면 더욱 좋습니다")
+                Text("첫 글쓰기를 플레이어리에서 작성하려고합니다 지금 드는 생각을 글로 작성해주세요" + "\n" + "사진도 추가 할수있습니다")
+                    .font(.custom("SongMyung-Regular.ttf", size: 18))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .foregroundColor(Color("Font"))
+                    .padding()
                 VStack{
                     ZStack {
                         if let image = self.image {
                             Image(uiImage: image)
                                 .resizable()
                                 .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(maxWidth:.infinity, minHeight: 0)
                                 .edgesIgnoringSafeArea(.leading)
                                 .edgesIgnoringSafeArea(.trailing)
                                 .edgesIgnoringSafeArea(.bottom)
@@ -45,7 +48,7 @@ struct OnBoardingWrite: View {
                             Image(uiImage: UIImage())
                                 .resizable()
                                 .scaledToFill()
-                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .frame(maxWidth:.infinity, minHeight: 0)
                                 .edgesIgnoringSafeArea(.leading)
                                 .edgesIgnoringSafeArea(.trailing)
                                 .edgesIgnoringSafeArea(.bottom)
@@ -53,15 +56,22 @@ struct OnBoardingWrite: View {
                                 Section {
                                     VStack {
                                         Image(systemName: "photo")
+                                            .resizable()
+                                            .frame(maxWidth: 48, maxHeight: 48)
+                                            .foregroundColor(Color("Icon"))
                                         Button {
                                             self.isPresented.toggle()
                                         } label: {
                                             Image(systemName: "plus")
+                                                .resizable()
+                                                .frame(maxWidth: 48, maxHeight: 48)
+                                                .foregroundColor(Color("Icon"))
                                         }.sheet(isPresented: $isPresented,onDismiss: {
                                         },content: {
                                             ImagePicker(sourceType: self.sourceType, image: $image)
                                         })
                                         Text("사진을 추가해주세요")
+                                            .font(.custom("BlackHanSans-Regular.ttf", size: 28))
                                     }
                                 }
                             }
@@ -73,7 +83,8 @@ struct OnBoardingWrite: View {
                         Text("제목")
                             .padding()
                         Spacer()
-                        TextField(text: $name, prompt: Text("제목을 입력해주세요")){
+                        TextField(text: $title, prompt: Text("제목을 입력해주세요")) {
+                            
                         }
                     }
                     Divider()
@@ -84,11 +95,14 @@ struct OnBoardingWrite: View {
                         TextEditor(text: $description)
                     }
                 }
-            }.toolbar {
+            }
+            .toolbar {
                 ToolbarItemGroup(placement:.bottomBar){
                     Spacer()
                     NavigationLink(destination: OnboardingList().navigationBarBackButtonHidden(true)) {
                         Text("작성완료")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
                     }
                 }
             }
