@@ -9,15 +9,13 @@ import Foundation
 import SwiftUI
 
 struct OnBoardingWrite: View {
-
+    
     var writeTime:String {
         let nowDate = Date() // 현재의 Date (ex: 2020-08-13 09:14:48 +0000)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
         return dateFormatter.string(from: nowDate)
     }
-    
-    
     @State private var title:String = ""
     @State private var description:String = ""
     @State private var isPresented = false
@@ -33,59 +31,38 @@ struct OnBoardingWrite: View {
                     .fixedSize(horizontal: false, vertical: true)
                     .foregroundColor(Color("Font"))
                     .padding()
-                VStack{
-                    ZStack {
-                        if let image = self.image {
-                            Image(uiImage: image)
+                if let image = self.image {
+                    Image(uiImage: image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(maxWidth: .infinity, maxHeight: 250)
+                }
+                else {
+                    VStack {
+                        Image(systemName: "photo")
+                            .resizable()
+                            .frame(maxWidth: 48, maxHeight: 48)
+                            .foregroundColor(Color("Icon"))
+                        Button {
+                            self.isPresented.toggle()
+                        } label: {
+                            Image(systemName: "plus")
                                 .resizable()
-                                .scaledToFill()
-                                .frame(maxWidth:.infinity, minHeight: 0)
-                                .edgesIgnoringSafeArea(.leading)
-                                .edgesIgnoringSafeArea(.trailing)
-                                .edgesIgnoringSafeArea(.bottom)
-                        }
-                        else {
-                            Image(uiImage: UIImage())
-                                .resizable()
-                                .scaledToFill()
-                                .frame(maxWidth:.infinity, minHeight: 0)
-                                .edgesIgnoringSafeArea(.leading)
-                                .edgesIgnoringSafeArea(.trailing)
-                                .edgesIgnoringSafeArea(.bottom)
-                            VStack {
-                                Section {
-                                    VStack {
-                                        Image(systemName: "photo")
-                                            .resizable()
-                                            .frame(maxWidth: 48, maxHeight: 48)
-                                            .foregroundColor(Color("Icon"))
-                                        Button {
-                                            self.isPresented.toggle()
-                                        } label: {
-                                            Image(systemName: "plus")
-                                                .resizable()
-                                                .frame(maxWidth: 48, maxHeight: 48)
-                                                .foregroundColor(Color("Icon"))
-                                        }.sheet(isPresented: $isPresented,onDismiss: {
-                                        },content: {
-                                            ImagePicker(sourceType: self.sourceType, image: $image)
-                                        })
-                                        Text("사진을 추가해주세요")
-                                            .font(.custom("BlackHanSans-Regular.ttf", size: 28))
-                                    }
-                                }
-                            }
-                        }
+                                .frame(maxWidth: 48, maxHeight: 48)
+                                .foregroundColor(Color("Icon"))
+                        }.sheet(isPresented: $isPresented,onDismiss: {
+                        },content: {
+                            ImagePicker(sourceType: self.sourceType, image: $image)
+                        })
+                        Text("사진을 추가해주세요")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 28))
                     }
                 }
-                VStack {
-                    HStack(spacing:10){
+                HStack(spacing:10){
                         Text("제목")
                             .padding()
                         Spacer()
-                        TextField(text: $title, prompt: Text("제목을 입력해주세요")) {
-                            
-                        }
+                    TextField("제목을 입력해주세요", text: $title)
                     }
                     Divider()
                     ZStack(alignment: .leading) {
@@ -94,7 +71,6 @@ struct OnBoardingWrite: View {
                         }
                         TextEditor(text: $description)
                     }
-                }
             }
             .toolbar {
                 ToolbarItemGroup(placement:.bottomBar){
@@ -115,3 +91,4 @@ struct OnBoardingWrite_Previews: PreviewProvider {
         OnBoardingWrite()
     }
 }
+
