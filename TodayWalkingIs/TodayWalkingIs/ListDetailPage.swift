@@ -41,7 +41,8 @@ struct ListDetailPage: View {
                     Spacer()
                     if modifyBool {
                         NavigationLink(destination: ListPage().navigationBarBackButtonHidden(true)) {
-                            Text("수정완료")
+                            Text("수정완료")                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                                .foregroundColor(Color("Button"))
                         }
                     } else {
                         Button("수정하기") {
@@ -52,7 +53,8 @@ struct ListDetailPage: View {
                 ToolbarItemGroup(placement:.bottomBar) {
                     Spacer()
                     NavigationLink(destination: HomePage().navigationBarBackButtonHidden(true)) {
-                        Text("홈으로")
+                        Text("홈으로")                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
                     }
                 }
             }

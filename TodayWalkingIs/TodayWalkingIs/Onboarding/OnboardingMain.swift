@@ -14,7 +14,11 @@ struct OnboardingMain: View {
     var body: some View {
         NavigationView {
             VStack{
-                Text("현재 당신의 위치기반으로 글쓰기를 작성하려고 합니다")
+                Text("현재 당신의 위치기반으로 글쓰기를 작성하려고 합니다")                        .font(.custom("SongMyung-Regular.ttf", size: 18))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .foregroundColor(Color("Font"))
+                    .padding()
                 Map(coordinateRegion: $coreLocation.region, showsUserLocation: true)
             }
             .onAppear {
@@ -25,6 +29,8 @@ struct OnboardingMain: View {
                     Spacer()
                     NavigationLink(destination: OnBoardingWrite().navigationBarBackButtonHidden(true)) {
                             Text("다음")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
                         }
                 }
             }

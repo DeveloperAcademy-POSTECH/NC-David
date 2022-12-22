@@ -28,6 +28,12 @@ struct SettingPage: View {
     @State private var darkMode:Bool = false
     @State private var selectedTheme: ThemeStyle = .basic
     
+    func setSetting() {
+        print(self.selectedFont)
+        print(self.mapMagnitude)
+        print(self.darkMode)
+        print(self.selectedTheme)
+    }
     var body: some View {
         NavigationView {
             VStack{
@@ -56,16 +62,30 @@ struct SettingPage: View {
                             }
                     }
                 }
-                Text("개발자: 데이비드, 앱버전: 1.0.0")
+                Text("개발자 : 데이비드 앱버전: 1.0.0")
+                    .font(.custom("SongMyung-Regular.ttf", size: 18))
+                    .foregroundColor(Color("Font"))
+                    .padding()
             }.toolbar {
                 ToolbarItemGroup(placement:.navigationBarLeading) {
-                    NavigationLink(destination: OnBoardingWrite().navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: HomePage().navigationBarBackButtonHidden(true)) {
                         Text("홈으로")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
+                    }
+                }
+                ToolbarItemGroup(placement:.navigationBarTrailing) {
+                    Button {
+                        setSetting()
+                    } label: {
+                        Text("저장")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
+                        }
                     }
                 }
             }
         }
-    }
 }
 
 

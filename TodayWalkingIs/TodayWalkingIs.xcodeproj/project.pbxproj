@@ -10,6 +10,7 @@
 		630A8A3E281BBEE100A508F6 /* Write.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630A8A3D281BBEE100A508F6 /* Write.swift */; };
 		631CC80F2849E0DF0055D4EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631CC80E2849E0DF0055D4EB /* Constants.swift */; };
 		6325B7C0292E60EA00D4B186 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6325B7BF292E60EA00D4B186 /* HomePage.swift */; };
+		632EA41A294F4F0D008DC080 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 632EA419294F4F0D008DC080 /* Quote.swift */; };
 		63312C5229499352002320FC /* ListDetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63312C5129499352002320FC /* ListDetailPage.swift */; };
 		63312C5429499D88002320FC /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63312C5329499D88002320FC /* ImagePicker.swift */; };
 		63312C562949A553002320FC /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63312C552949A553002320FC /* SettingPage.swift */; };
@@ -23,6 +24,8 @@
 		63B2CD8F28192E6A00476EFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63B2CD8E28192E6A00476EFF /* Preview Assets.xcassets */; };
 		63B2CD982819306600476EFF /* OnboardingMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD972819306600476EFF /* OnboardingMain.swift */; };
 		63B2CD9A281930EB00476EFF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63B2CD99281930EB00476EFF /* OnboardingView.swift */; };
+		63E3522C29513760000BC63B /* OnboardingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3522B29513760000BC63B /* OnboardingExample.swift */; };
+		63E3522E29516982000BC63B /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E3522D29516982000BC63B /* Example.swift */; };
 		63EE789A29437D65006A32D7 /* OnboardingWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE789929437D65006A32D7 /* OnboardingWrite.swift */; };
 		63EE789C29437EF3006A32D7 /* OnboardingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EE789B29437EF3006A32D7 /* OnboardingList.swift */; };
 		63F55B63282010D2004D7D65 /* WritePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F55B62282010D2004D7D65 /* WritePage.swift */; };
@@ -32,6 +35,7 @@
 		630A8A3D281BBEE100A508F6 /* Write.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Write.swift; sourceTree = "<group>"; };
 		631CC80E2849E0DF0055D4EB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6325B7BF292E60EA00D4B186 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
+		632EA419294F4F0D008DC080 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		63312C5129499352002320FC /* ListDetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDetailPage.swift; sourceTree = "<group>"; };
 		63312C5329499D88002320FC /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		63312C552949A553002320FC /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		63B2CD8E28192E6A00476EFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		63B2CD972819306600476EFF /* OnboardingMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMain.swift; sourceTree = "<group>"; };
 		63B2CD99281930EB00476EFF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		63E3522B29513760000BC63B /* OnboardingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingExample.swift; sourceTree = "<group>"; };
+		63E3522D29516982000BC63B /* Example.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
 		63EE789929437D65006A32D7 /* OnboardingWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWrite.swift; sourceTree = "<group>"; };
 		63EE789B29437EF3006A32D7 /* OnboardingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingList.swift; sourceTree = "<group>"; };
 		63F55B62282010D2004D7D65 /* WritePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritePage.swift; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 				6325B7BF292E60EA00D4B186 /* HomePage.swift */,
 				63312C5129499352002320FC /* ListDetailPage.swift */,
 				63692DD328700E4C009F1060 /* CoreLocation.swift */,
+				63E3522D29516982000BC63B /* Example.swift */,
 				630A8A3D281BBEE100A508F6 /* Write.swift */,
 				63312C5329499D88002320FC /* ImagePicker.swift */,
 				63B2CD8B28192E6A00476EFF /* Assets.xcassets */,
@@ -115,6 +122,7 @@
 				63B2CD8928192E6800476EFF /* ContentView.swift */,
 				63B2CD8728192E6800476EFF /* TodayWalkingIsApp.swift */,
 				631CC80E2849E0DF0055D4EB /* Constants.swift */,
+				632EA419294F4F0D008DC080 /* Quote.swift */,
 			);
 			path = TodayWalkingIs;
 			sourceTree = "<group>";
@@ -134,6 +142,7 @@
 				63B2CD972819306600476EFF /* OnboardingMain.swift */,
 				63EE789929437D65006A32D7 /* OnboardingWrite.swift */,
 				63EE789B29437EF3006A32D7 /* OnboardingList.swift */,
+				63E3522B29513760000BC63B /* OnboardingExample.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -214,8 +223,11 @@
 				6325B7C0292E60EA00D4B186 /* HomePage.swift in Sources */,
 				63F55B63282010D2004D7D65 /* WritePage.swift in Sources */,
 				63312C5429499D88002320FC /* ImagePicker.swift in Sources */,
+				632EA41A294F4F0D008DC080 /* Quote.swift in Sources */,
 				63B2CD982819306600476EFF /* OnboardingMain.swift in Sources */,
 				63692DD428700E4C009F1060 /* CoreLocation.swift in Sources */,
+				63E3522C29513760000BC63B /* OnboardingExample.swift in Sources */,
+				63E3522E29516982000BC63B /* Example.swift in Sources */,
 				630A8A3E281BBEE100A508F6 /* Write.swift in Sources */,
 				63EE789C29437EF3006A32D7 /* OnboardingList.swift in Sources */,
 				63312C5229499352002320FC /* ListDetailPage.swift in Sources */,
