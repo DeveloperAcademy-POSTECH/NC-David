@@ -19,16 +19,21 @@ struct OnboardingView: View {
     Image("image0"),
     Image("image1"),
     Image("image2"),
-    Image("image0")]
+    Image("image3")]
+    
+    let quote:Quote = Quote()
     
     @State private var animate = false
+    @State private var quoteTitle = ""
+    @State private var quoteSubTitle = ""
+    
     
     var body: some View {
         NavigationView{
             VStack {
                 LazyVGrid(columns: columns) {
                     ForEach(0...images.count-1, id: \.self) { index in
-                        NavigationLink(destination: OnboardingMain().navigationBarBackButtonHidden(true)) {
+                        NavigationLink(destination: OnboardingExample(number: index).navigationBarBackButtonHidden(true)) {
                             images[index]
                                 .resizable()
                                 .frame(width: 200, height: 200)
@@ -42,49 +47,40 @@ struct OnboardingView: View {
                     .onAppear {
                         self.animate = true
                     }
-                Text("슬로건")
+                Text("장소를 더 멋지게 기억해보자!")
                     .font(.custom("BlackHanSans-Regular.ttf", size: 30))
                     .foregroundColor(Color("Font"))
 
                 VStack(alignment:.center){
-                    Text("우리가 지나온 장소를 다시 기억하는 방식은 여러가지 입니다.")
+                    Text("우리가 지나온 장소를 다시 기억하는 방식은 여러가지 입니다" + "\n" + "플레이어리는 지금 내위치에 대한 기억을 더 멋집게 남길수있는 앱입니다" + "\n" + "그 기억을 지도를 보고 시간이 흐른뒤에 다시한번 확인해보세요.")
                         .font(.custom("SongMyung-Regular.ttf", size: 18))
                         .multilineTextAlignment(.center)
                         .fixedSize(horizontal: false, vertical: true)
                         .foregroundColor(Color("Font"))
                         .padding()
-                    Text("플레이어리는 지금 내위치에 대한 기억을 더 멋집게 남길수있는 앱입니다.2")
-                        .font(.custom("SongMyung-Regular.ttf", size: 18))
-                        .multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .foregroundColor(Color("Font"))
-                        .padding()
-                    Text("그 기억을 지도를 보고 시간이 흐른뒤에 다시한번 확인해보세요")
-                        .font(.custom("SongMyung-Regular.ttf", size: 18))
-                        .multilineTextAlignment(.center)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .foregroundColor(Color("Font"))
-                        .padding()
-                                                                   
-                    
                 }
-                Text("명언").font(.custom("BlackHanSans-Regular.ttf", size: 30))
-
-                Text("명언작가").font(.custom("BlackHanSans-Regular.ttf", size: 30))
-
+                Text(quoteTitle)
+                    .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                Text(quoteSubTitle).font(.custom("BlackHanSans-Regular.ttf", size: 18))
                 Spacer()
-                
             }
             .toolbar {
                 ToolbarItemGroup(placement: .bottomBar) {
                     Spacer()
                     NavigationLink(destination: OnBoardingWrite().navigationBarBackButtonHidden(true)) {
-                            Text("다음").font(.custom("BlackHanSans-Regular.ttf", size: 30))
+                            Text("다음")
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
                             .foregroundColor(Color("Button"))
-
                         }
                 }
-                }
+            }
+            .onAppear{
+                self.quoteTitle = quote.getRandomShotQuote()[0]
+                self.quoteSubTitle = quote.getRandomShotQuote()[1]
+                
+            }
             .background(Color("Background"))
         }
         }
@@ -98,7 +94,7 @@ struct WalkThroughView_Previews: PreviewProvider {
     Image("image0"),
     Image("image1"),
     Image("image2"),
-    Image("Image0"),]
+    Image("Image3"),]
 
 
     static var previews: some View {

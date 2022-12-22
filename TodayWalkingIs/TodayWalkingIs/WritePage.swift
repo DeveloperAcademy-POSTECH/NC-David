@@ -44,17 +44,24 @@ struct WritePage: View {
                                 Section {
                                     VStack {
                                         Image(systemName: "photo")
+                                            .resizable()
+                                            .frame(maxWidth: 48, maxHeight: 48)
+                                            .foregroundColor(Color("Icon"))
                                             Button {
                                                 self.isPresented.toggle()
                                             } label: {
                                                 Image(systemName: "plus")
+                                                    .resizable()
+                                                    .frame(maxWidth: 48, maxHeight: 48)
+                                                    .foregroundColor(Color("Icon"))
                                             }.sheet(isPresented: $isPresented,onDismiss: {
                                                 
                                             },content: {
                                                 ImagePicker(sourceType: self.sourceType, image: $image)
                                             })
-
                                         Text("사진을 추가해주세요")
+                                            .font(.custom("BlackHanSans-Regular.ttf", size: 28))
+
                                     }
                                 }
                             }
@@ -81,14 +88,15 @@ struct WritePage: View {
             .toolbar {
                 ToolbarItemGroup(placement:.navigationBarLeading){
                     NavigationLink(destination: HomePage().navigationBarBackButtonHidden(true)) {
-                        Text("홈으로")
-                        Spacer()
+                        Text("홈으로")                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
                     }
                 }
                 ToolbarItemGroup(placement:.navigationBarTrailing){
                     NavigationLink(destination: ListPage().navigationBarBackButtonHidden(true)) {
                         Text("작성완료")
-                        Spacer()
+                            .font(.custom("BlackHanSans-Regular.ttf", size: 24))
+                            .foregroundColor(Color("Button"))
                     }
                 }
             }
